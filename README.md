@@ -1,18 +1,52 @@
-## Getting Started
+# Manajemen Tiket Bioskop dengan Decorator Pattern
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Proyek ini adalah implementasi dari **Decorator Pattern** dalam konteks sistem tiket bioskop menggunakan bahasa pemrograman **Java**. Aplikasi ini dikembangkan sebagai bagian dari mata kuliah **Rekayasa Perangkat Lunak Berbasis Komponen (RPLBK)**. Aplikasi ini memungkinkan pengguna untuk membeli tiket bioskop dasar dan menambahkan fitur tambahan seperti popcorn, minuman, dan snack menggunakan pola desain dekorator.
 
-## Folder Structure
+## Deskripsi Proyek
 
-The workspace contains two folders by default, where:
+Proyek ini mengikuti prinsip **Decorator Pattern** dengan memisahkan tanggung jawab komponen utama menjadi kelas dasar dan beberapa dekorator yang menambahkan fungsi tambahan. Berikut adalah komponen utama dari proyek ini:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- **`MovieTicket`**: Sebuah interface yang mendefinisikan deskripsi dan harga tiket bioskop.
+- **`BasicMovieTicket`**: Kelas dasar yang mengimplementasikan `MovieTicket` untuk membuat tiket bioskop dasar tanpa tambahan.
+- **`TicketDecorator`**: Kelas abstrak yang mengimplementasikan `MovieTicket` dan digunakan untuk menambahkan fitur tambahan ke tiket.
+- **`PopcornDecorator`**, **`DrinkDecorator`**, dan **`SnackDecorator`**: Dekorator yang masing-masing menambahkan fitur popcorn, minuman, dan snack ke tiket bioskop.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Aplikasi ini memungkinkan pengguna untuk membeli tiket dasar dan menambahkan satu atau lebih fitur tambahan sesuai dengan kebutuhan, dengan setiap fitur memiliki biaya tambahan yang ditambahkan ke total biaya tiket.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Proyek ini dikembangkan oleh **Verry Kurniawan** (NIM: 21120122130062) sebagai bagian dari mata kuliah **Rekayasa Perangkat Lunak Berbasis Komponen (RPLBK)**.
 
-## Dependency Management
+## Fitur
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- **Pola Desain Decorator**: Menggunakan Decorator Pattern untuk menambahkan fitur tambahan ke tiket tanpa mengubah kelas dasar.
+- **Tiket Bioskop dengan Fitur Tambahan**: Pengguna dapat menambahkan popcorn, minuman, atau snack ke tiket bioskop mereka dengan biaya tambahan.
+- **Kode yang Modular dan Mudah Diperluas**: Setiap dekorator ditulis sebagai kelas terpisah yang mudah dipahami dan diuji.
+
+## Instalasi
+
+1. Clone repository:
+
+   ```bash
+   git clone https://github.com/princeofverry/RPLBK-DecoratorPattern-MovieTicket.git
+
+   ```
+
+2. Masuk repository:
+
+   ```bash
+   cd RPLBK-DecoratorPattern-MovieTicket
+   ```
+
+3. Compile dan jalankan proyek:
+   ```bash
+   javac Main.java
+   java Main
+   ```
+
+## Output
+
+```bash
+Basic Movie Ticket $10.0
+Basic Movie Ticket, Popcorn $15.0
+Basic Movie Ticket, Popcorn, Drink $18.0
+Basic Movie Ticket, Popcorn, Drink, Snack $22.0
+```
